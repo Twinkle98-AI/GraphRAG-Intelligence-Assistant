@@ -1,0 +1,9 @@
+TROUBLESHOOTING RUNBOOK: Connection Timeout
+
+For a Connection Timeout, first check whether the Database is healthy and accepting connections. Review connection pool saturation, database logs, Network connectivity, DNS, and firewall rules.
+
+If High Latency appears across several services, inspect the Network and Load Balancer metrics. If only the Payment Service is affected, inspect its configuration and recent Deployment history.
+
+Use Monitoring dashboards to compare Error Rate, CPU Usage, Memory Pressure, and request duration. Do not restart production services or change firewall rules without authorization. Record evidence and obtain approval before taking disruptive actions.
+
+If the Database connection pool is exhausted, follow the approved capacity procedure. If a recent Deployment introduced the issue, follow the rollback runbook and request approval from the incident commander.

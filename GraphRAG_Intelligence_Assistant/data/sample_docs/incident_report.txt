@@ -1,0 +1,7 @@
+INCIDENT REPORT: Payment Service timeout
+
+The Payment Service depends on the PostgreSQL Database to store transaction records. At 10:15 AM, the monitoring system reported a Connection Timeout between the Payment Service and the Database. Customers experienced a higher Error Rate and failed checkout requests.
+
+The incident report does not prove the database was the only cause. Engineers should check database connection pool usage, Network latency, DNS resolution, and recent Deployment changes. The API Gateway and Load Balancer should also be checked for elevated request latency.
+
+Related services: Authentication Service provides customer identity tokens. The Payment Service validates those tokens before processing transactions.

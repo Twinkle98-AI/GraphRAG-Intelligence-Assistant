@@ -1,0 +1,7 @@
+SYSTEM ARCHITECTURE NOTES
+
+The Payment Service depends on the PostgreSQL Database and connects to it through the internal Network. The Authentication Service provides identity tokens to the Payment Service.
+
+The API Gateway routes requests to the Load Balancer. The Load Balancer distributes traffic to application instances. Monitoring tracks CPU Usage, Memory Pressure, Error Rate, and High Latency.
+
+Redis Cache stores short-lived data. If the cache is unavailable, the application may experience increased Database load. A deployment can introduce configuration changes, so compare the current version with the last known good Deployment.

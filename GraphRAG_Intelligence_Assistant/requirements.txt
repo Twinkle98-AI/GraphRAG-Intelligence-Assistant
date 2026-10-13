@@ -1,0 +1,6 @@
+streamlit>=1.40
+networkx>=3.2
+scikit-learn>=1.4
+numpy>=1.26
+pypdf>=5.0
+requests>=2.31
